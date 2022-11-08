@@ -6,20 +6,20 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @id = Random.rand(1..1000)
-  end
-
-  def of_age?
-    return true if @age >= 18
-
-    false
+    puts 'Itnit prton'
   end
 
   def can_use_services?
-    return true if @parent_permission == true || @age >= 18
+    puts 'service'
+    @parent_permission || @age >= 18
+  end
 
-    false
+  private
+
+  def of_age?
+    @age >= 18
   end
 end
 
-# p1 = Person.new(23,'Benjamin')
-# puts p1.name
+p1 = Person.new(16, 'Benjamin')
+puts p1.can_use_services?
