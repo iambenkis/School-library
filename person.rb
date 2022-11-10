@@ -1,35 +1,6 @@
-class Nameable
-  def correct_name
-    raise NotImplementedError, "#{self.class} has not implemented methods '#{__method__}'"
-  end
-end
-
-class Decorator < Nameable
-  attr_accessor :nameable
-
-  def initialize(nameable)
-    @nameable = nameable
-    super()
-  end
-
-  def correct_name
-    @nameable.correct_name
-  end
-end
-
-class CapitalizeDecorator < Decorator
-  def correct_name
-    @nameable.correct_name.capitalize
-  end
-end
-
-class TrimmerDecorator < Decorator
-  def correct_name
-    return @nameable.correct_name.slice(0, 9) if @nameable.correct_name.length > 10
-
-    @nameable.correct_name
-  end
-end
+require_relative 'nameable'
+require_relative 'capitalize_decorator'
+require_relative 'trimmer_decorator'
 
 class Person < Nameable
   attr_accessor :id, :name, :age
@@ -53,9 +24,8 @@ class Person < Nameable
     @parent_permission || @age >= 18
   end
 
-  def add_rental (rental)
-    @rentals.push(rental)
-    rental.person = self
+  def add_rental(date, book)
+    Rental.new(date, self, book)
   end
 
   private
