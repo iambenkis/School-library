@@ -33,12 +33,14 @@ end
 
 class Person < Nameable
   attr_accessor :id, :name, :age
+  attr_reader :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @name = name
     @age = age
     @parent_permission = parent_permission
     @id = Random.rand(1..1000)
+    @rentals = []
     super()
   end
 
@@ -51,16 +53,14 @@ class Person < Nameable
     @parent_permission || @age >= 18
   end
 
+  def add_rental (rental)
+    @rentals.push(rental)
+    rental.person = self
+  end
+
   private
 
   def of_age?
     @age >= 18
   end
 end
-
-person = Person.new(16, 'benjamin')
-puts person.correct_name # Display the name
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name # Capitalize the name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name # Capitalize and Trim the name if its length is greater than 10
