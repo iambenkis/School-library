@@ -76,8 +76,8 @@ class App
     book = @books[book_id]
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index do |person, i|
-      print "#{i}) [#{defined?(person.specialization) ? 'TEACHER' : 'STUDENT'}]
-            Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
+      is_teacher = defined?(person.specialization)
+      print "#{i}) [#{is_teacher ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
     end
     person_id = gets.chomp.to_i
     person = @people[person_id]

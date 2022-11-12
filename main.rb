@@ -22,14 +22,6 @@ class Main
         @section
       else
         puts 'Ivalid Choice for app section, Do you want to choose again [y/n]?'
-        # case gets.chomp
-        # when 'y'
-        #   option
-        # when 'n'
-        #   return 1
-        # else
-        #   return 0
-        # end
         gets.chomp == 'y' ? option : 1
       end
       start
