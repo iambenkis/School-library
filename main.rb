@@ -22,19 +22,21 @@ class Main
         @section
       else
         puts 'Ivalid Choice for app section, Do you want to choose again [y/n]?'
-        case gets.chomp
-        when 'y'
-          option
-        when 'n'
-          return
-        else
-          return
-        end
+        # case gets.chomp
+        # when 'y'
+        #   option
+        # when 'n'
+        #   return 1
+        # else
+        #   return 0
+        # end
+        gets.chomp == 'y' ? option : 1
       end
       start
     end
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def start
     case @section
     when 1
@@ -53,6 +55,7 @@ class Main
       puts 'Thank you for using this app!'
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
 
 main = Main.new

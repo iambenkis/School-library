@@ -18,7 +18,8 @@ class App
 
   def list_all_people
     @people.each do |person|
-      print "[#{defined?(person.specialization) ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
+      is_teacher = defined?(person.specialization)
+      print "[#{is_teacher ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
     end
   end
 
@@ -42,8 +43,7 @@ class App
       name = gets.chomp
       print 'Has parent permission? [Y/N] '
       parent_permission = gets.chomp.downcase == 'y'
-      person_obj = Student.new(age, name)
-      @people.push(person_obj)
+      @people.push(Student.new(age, parent_permission, name))
       puts 'Person created successfully'
     when 2
       print 'Age: '
@@ -52,8 +52,7 @@ class App
       name = gets.chomp
       print 'Specialization: '
       specialization = gets.chomp
-      person_obj = Teacher.new(age, specialization, name)
-      @people.push(person_obj)
+      @people.push(Teacher.new(age, specialization, name))
       puts 'Person created successfully'
     else
       puts 'Invalid choice'
@@ -77,7 +76,8 @@ class App
     book = @books[book_id]
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index do |person, i|
-      print "#{i}) [#{defined?(person.specialization) ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
+      print "#{i}) [#{defined?(person.specialization) ? 'TEACHER' : 'STUDENT'}]
+            Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
     end
     person_id = gets.chomp.to_i
     person = @people[person_id]
