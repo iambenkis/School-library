@@ -4,6 +4,8 @@
 
 > In this project, I build a school library app. In this initial step, I implement the classes to represent students and teachers.
 
+![uml_class_diagram](https://user-images.githubusercontent.com/80458199/201545623-eff44f48-c1bb-42b9-98b2-bc706b0da2cd.png)
+
 ## Built With
 
 - Ruby
