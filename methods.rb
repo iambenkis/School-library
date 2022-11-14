@@ -1,6 +1,15 @@
+require 'json'
+
 def list_all_books
+  # if File.exist?('./books.json')
+  #   JSON.parse(File.read('./books.json')).map do |book|
+  #     Book.new(book['title'], book['author'])
+  #   end
+  # else
+  #   []
+  # end
   @books.each_with_index do |book, i|
-    puts "#{i}) Title: \"#{book.title}\", Author: \"#{book.author}\""
+     puts "#{i}) Title: \"#{book.title}\", Author: \"#{book.author}\""
   end
 end
 
@@ -82,4 +91,23 @@ def create_rentals
   rental = Rental.new(date, book, person)
   @rentals.push(rental)
   puts 'Rental created successfully'
+end
+
+
+def save_data
+  arr = []
+  @books.each_with_index {
+    |book,i| arr.push({title: book.title, author: book.author})
+  }
+  File.write('./books.json', arr.to_json) if @books.any?
+end
+
+def load_books
+  if File.exist?('./books.json')
+    JSON.parse(File.read('./books.json')).map do |book|
+      Book.new(book['title'], book['author'])
+    end
+  else
+    []
+  end
 end
