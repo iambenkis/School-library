@@ -1,13 +1,6 @@
 require 'json'
 
 def list_all_books
-  # if File.exist?('./books.json')
-  #   JSON.parse(File.read('./books.json')).map do |book|
-  #     Book.new(book['title'], book['author'])
-  #   end
-  # else
-  #   []
-  # end
   @books.each_with_index do |book, i|
      puts "#{i}) Title: \"#{book.title}\", Author: \"#{book.author}\""
   end
