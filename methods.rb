@@ -23,16 +23,16 @@ end
 
     case trade
     when 1
-      print 'Age: '
-      age = gets.chomp
-      print 'Name: '
-      name = gets.chomp
-      print 'Has parent permission? [Y/N] '
-      parent_permission = gets.chomp.downcase == 'y'
-      @people.push(Student.new(age, parent_permission, name))
-      puts 'Person created successfully'
+      create_student
     when 2
-      print 'Age: '
+      create_teacher
+    else
+      puts 'Invalid choice'
+    end
+  end
+
+  def create_teacher
+    print 'Age: '
       age = gets.chomp
       print 'Name: '
       name = gets.chomp
@@ -40,9 +40,17 @@ end
       specialization = gets.chomp
       @people.push(Teacher.new(age, specialization, name))
       puts 'Person created successfully'
-    else
-      puts 'Invalid choice'
-    end
+  end
+
+  def create_student
+    print 'Age: '
+      age = gets.chomp
+      print 'Name: '
+      name = gets.chomp
+      print 'Has parent permission? [Y/N] '
+      parent_permission = gets.chomp.downcase == 'y'
+      @people.push(Student.new(age, parent_permission, name))
+      puts 'Person created successfully'
   end
 
   def create_books
