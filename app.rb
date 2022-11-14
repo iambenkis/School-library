@@ -10,7 +10,10 @@ class App
   def initialize
     @section = 0
     @people = []
-    @books = []
+    # File.read('./people.json')
+    @books = load_books
+    # JSON.parse(File.read('./books.json'), array_class)
+    puts @books
     @rentals = []
   end
 
@@ -53,6 +56,7 @@ class App
     when 6
       list_rental_by_id
     when 7
+      save_data
       puts 'Thank you of using this app!'
     end
   end
