@@ -50,3 +50,7 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+Layout/EndOfLine:
+  EnforcedStyle: crlf
