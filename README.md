@@ -24,6 +24,13 @@ To get a local copy up and running follow these simple example steps:
 * Twitter: [@benjamin kisenge](https://twitter.com/iambenkis)
 * LinkedIn: [benjamin kisenge](https://www.linkedin.com/in/ben-kisenge/)
 
+
+👤 **Mo'athal S. Kachi**
+
+- GitHub: [/Moathal](https://github.com/Moathal)
+- Twitter: [/mo_athal](https://twitter.com/mo_athal)
+- LinkedIn: [/moathalkachi](https://linkedin.com/in/moathalkachi)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
