@@ -5,16 +5,14 @@ require_relative 'student'
 require_relative 'classroom'
 require_relative 'person'
 require_relative 'methods'
+require_relative 'loader'
 
 class App
   def initialize
     @section = 0
-    @people = []
-    # File.read('./people.json')
+    @people = load_people
     @books = load_books
-    # JSON.parse(File.read('./books.json'), array_class)
-    puts @books
-    @rentals = []
+    @rentals = load_rentals
   end
 
   puts "Welcome to the school library \t"

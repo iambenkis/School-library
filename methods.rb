@@ -87,20 +87,17 @@ def create_rentals
 end
 
 
-def save_data
-  arr = []
-  @books.each_with_index {
-    |book,i| arr.push({title: book.title, author: book.author})
-  }
-  File.write('./books.json', arr.to_json) if @books.any?
+def is_teacher
+  @people.each_with_index do |person, i|
+    is_teacher = defined?(person.specialization)
+    print "#{i}) [#{is_teacher ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
+  end
 end
 
-def load_books
-  if File.exist?('./books.json')
-    JSON.parse(File.read('./books.json')).map do |book|
-      Book.new(book['title'], book['author'])
-    end
-  else
-    []
-  end
+def save_data
+  book_arr = []
+  people_arr = []
+  rentals_arr = []
+  @books.each_with_index { |book,i| arr.push({title: book.title, author: book.author}) }
+  File.write('./books.json', arr.to_json) if @books.any?
 end
