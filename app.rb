@@ -14,7 +14,7 @@ class App
     @rentals = []
   end
 
-    puts "Welcome to the school library \t"
+  puts "Welcome to the school library \t"
 
   def option
     while @section != 7
@@ -56,4 +56,5 @@ class App
       puts 'Thank you of using this app!'
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
