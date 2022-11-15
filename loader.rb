@@ -12,9 +12,9 @@ class Data_loader
     else
       []
     end
-end
+  end
 
-def load_people
+  def load_people
     if File.exist?('./people.json') && !File.read('./people.json').empty?
       JSON.parse(File.read('./people.json')).map do |person|
         Person.new(person['name'], person['age'])
@@ -22,15 +22,15 @@ def load_people
     else
       []
     end
-end
-
-def load_rentals
-  if File.exist?('./rentals.json')
-    JSON.parse(File.read('./rentals.json')).map do |rental|
-      Rental.new(rental['date'], rental['book'], rental['person'])
-    end
-  else
-    []
   end
-end
+
+  def load_rentals
+    if File.exist?('./rentals.json') && !File.read('./rentals.json').empty?
+      JSON.parse(File.read('./rentals.json')).map do |rental|
+        Rental.new(rental['date'], rental['book'], rental['person'])
+      end
+    else
+      []
+    end
+  end
 end

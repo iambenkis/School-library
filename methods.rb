@@ -2,7 +2,7 @@ require 'json'
 
 def list_all_books
   @books.each_with_index do |book, i|
-     puts "#{i}) Title: \"#{book.title}\", Author: \"#{book.author}\""
+    puts "#{i}) Title: \"#{book.title}\", Author: \"#{book.author}\""
   end
 end
 
@@ -15,7 +15,7 @@ end
 
 def list_rental_by_id
   print 'Id of person: '
-  id = gets.chomp.to_i
+  id = gets.chomp
   @rentals.each do |rental|
     print "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}\n" if rental.person.id == id
   end
@@ -43,7 +43,7 @@ def create_teacher
   print 'Specialization: '
   id = Random.rand(1..1000)
   specialization = gets.chomp
-  @people.push(Teacher.new(id, age, specialization, name: name))
+  @people.push(Teacher.new(id, age, name, specialization))
   puts 'Person created successfully'
 end
 
@@ -55,7 +55,7 @@ def create_student
   print 'Has parent permission? [Y/N] '
   id = Random.rand(1..1000)
   parent_permission = gets.chomp.downcase == 'y'
-  @people.push(Student.new(id, age, parent_permission, name))
+  @people.push(Student.new(id, age, name, parent_permission: parent_permission))
   puts 'Person created successfully'
 end
 
@@ -88,9 +88,9 @@ def create_rentals
   puts 'Rental created successfully'
 end
 
-
 def is_teacher
   @people.each_with_index do |person, i|
+    puts person
     is_teacher = defined?(person.specialization)
     print "#{i}) [#{is_teacher ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
   end

@@ -9,7 +9,6 @@ require_relative 'loader'
 require './saver'
 
 class App
-
   def initialize
     @section = 0
     @people = Data_loader.new.load_people
@@ -56,7 +55,6 @@ class App
     when 6
       list_rental_by_id
     when 7
-      puts @people, @rentals, @books
       Saver.new.save_books(@books)
       Saver.new.save_people(@people)
       Saver.new.save_rentals(@rentals)

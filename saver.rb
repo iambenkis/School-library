@@ -7,8 +7,10 @@ class Saver
     def save_people(people)
         people_arr = []
         people.each_with_index do |person,i|
-        person.has_key?(:specialization) ? people_arr.push({id: person.id, age: person.age, specialization: person.specialization, name: person.name}) :
-        people_arr.push({id: person.id, age: person.age, name: person.name, parent_permission: person.parent_permission}) 
+          p "inside save people"
+          p person
+          is_teacher = defined?(person.specialization)
+          is_teacher ? people_arr.push({id: person.id, age: person.age, specialization: person.specialization, name: person.name}) : people_arr.push({id: person.id, age: person.age, name: person.name, parent_permission: person.parent_permission})
         end
         File.write('./people.json', people_arr.to_json) if people.any?
     end
@@ -18,4 +20,3 @@ class Saver
         File.write('./rentals.json', rentals_arr.to_json) if rentals.any?
     end
 end
-    
