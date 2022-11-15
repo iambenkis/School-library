@@ -17,7 +17,8 @@ class Data_loader
   def load_people
     if File.exist?('./people.json') && !File.read('./people.json').empty?
       JSON.parse(File.read('./people.json')).map do |person|
-        Person.new(person['name'], person['age'])
+        is_teacher = person.has_key?("specialization")
+        is_teacher ? Teacher.new(person["id"], person["age"], person["specialization"], person["name"]) : Student.new( person["id"], person["age"], person["name"], person["parent_permission"])
       end
     else
       []
