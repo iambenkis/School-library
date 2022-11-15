@@ -41,8 +41,9 @@ def create_teacher
   print 'Name: '
   name = gets.chomp
   print 'Specialization: '
+  id = Random.rand(1..1000)
   specialization = gets.chomp
-  @people.push(Teacher.new(age, specialization, name))
+  @people.push(Teacher.new(id, age, specialization, name: name))
   puts 'Person created successfully'
 end
 
@@ -52,8 +53,9 @@ def create_student
   print 'Name: '
   name = gets.chomp
   print 'Has parent permission? [Y/N] '
+  id = Random.rand(1..1000)
   parent_permission = gets.chomp.downcase == 'y'
-  @people.push(Student.new(age, parent_permission, name))
+  @people.push(Student.new(id, age, parent_permission, name))
   puts 'Person created successfully'
 end
 
