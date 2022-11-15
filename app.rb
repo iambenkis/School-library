@@ -6,13 +6,14 @@ require_relative 'classroom'
 require_relative 'person'
 require_relative 'methods'
 require_relative 'loader'
+require './saver'
 
 class App
   def initialize
     @section = 0
-    @people = load_people
-    @books = load_books
-    @rentals = load_rentals
+    @people = Data_loader.new.load_people
+    @books = Data_loader.new.load_books
+    @rentals = Data_loader.new.load_rentals
   end
 
   puts "Welcome to the school library \t"
@@ -54,7 +55,7 @@ class App
     when 6
       list_rental_by_id
     when 7
-      save_data
+      Saver.new.save_data(@books, @people, @rentals)
       puts 'Thank you of using this app!'
     end
   end

@@ -93,11 +93,3 @@ def is_teacher
     print "#{i}) [#{is_teacher ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
   end
 end
-
-def save_data
-  book_arr = []
-  people_arr = []
-  rentals_arr = []
-  @books.each_with_index { |book,i| arr.push({title: book.title, author: book.author}) }
-  File.write('./books.json', arr.to_json) if @books.any?
-end
