@@ -28,7 +28,7 @@ class Data_loader
   def load_rentals
     if File.exist?('./rentals.json') && !File.read('./rentals.json').empty?
       JSON.parse(File.read('./rentals.json')).map do |rental|
-        Rental.new(rental['date'], rental['book'], rental['person'])
+        Rental.new(rental['id'],rental['date'], rental['book'], rental['person'])
       end
     else
       []

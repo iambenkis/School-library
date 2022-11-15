@@ -15,7 +15,7 @@ end
 
 def list_rental_by_id
   print 'Id of person: '
-  id = gets.chomp
+  id = gets.chomp.to_i
   @rentals.each do |rental|
     print "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}\n" if rental.person.id == id
   end
@@ -55,7 +55,7 @@ def create_student
   print 'Has parent permission? [Y/N] '
   id = Random.rand(1..1000)
   parent_permission = gets.chomp.downcase == 'y'
-  @people.push(Student.new(id, age, name, parent_permission: parent_permission))
+  @people.push(Student.new(id, age, name, parent_permission))
   puts 'Person created successfully'
 end
 

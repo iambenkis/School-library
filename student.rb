@@ -5,7 +5,7 @@ class Student < Person
   attr_accessor :name, :age
   attr_reader :classroom
 
-  def initialize(id, age, name = 'Unknown', parent_permission)
+  def initialize(id, age, name, parent_permission)
     super(id, age, name: name, parent_permission: parent_permission)
   end
 

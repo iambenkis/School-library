@@ -8,13 +8,13 @@ class Saver
         people_arr = []
         people.each_with_index do |person,i|
           is_teacher = defined?(person.specialization)
-          is_teacher ? people_arr.push({id: person.id, age: person.age, specialization: person.specialization, name: person.name}) : people_arr.push({id: person.id, age: person.age, name: person.name, parent_permission: person.parent_permission})
+          is_teacher ? people_arr.push({id: person.id, age: person.age, specialization: person.specialization, name: person.name}) : people_arr.push({id: person.id, age: person.age, name: person.name})
         end
         File.write('./people.json', people_arr.to_json) if people.any?
     end
     def save_rentals(rentals)
         rentals_arr = []
-        rentals.each_with_index { |rental,i| rentals_arr.push({date: rental.date, book: rental.book, person: rental.person}) }
+        rentals.each_with_index { |rental,i| rentals_arr.push({date: rental.date, book: rental.book.title, person: rental.person.name, id: rental.person.id}) }
         File.write('./rentals.json', rentals_arr.to_json) if rentals.any?
     end
 end
