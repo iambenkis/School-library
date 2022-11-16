@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"date":"555","book":{"title":"chjcc","author":"djdjd"},"person":{"id":8,"name":"vsx"}},{"date":"4444","book":{"title":"dhdd","author":"dhdjsd"},"person":{"id":925,"name":"ure"}},{"date":"12-12-2002","book":{"title":"lord's ring","author":"benkis"},"person":{"id":238,"name":"benki"}},{"date":"2022/11/10","book":{"title":"Pit","author":"Alm"},"person":{"id":776,"name":"reo"}},{"date":"2022/02/02","book":{"title":"Pit","author":"Alm"},"person":{"id":350,"name":"tre"}}]
+=======
+[{"date":"555","book":{"title":"chjcc","author":"djdjd"},"person":{"name":"vsx","id":8,"age":"43","parent_permission":true}},{"date":"4444","book":{"title":"dhdd","author":"dhdjsd"},"person":{"name":"ure","id":925,"age":"15","parent_permission":null}},{"date":"12-12-2002","book":{"title":"lord's ring","author":"benkis"},"person":{"name":"benki","id":238,"age":"22","parent_permission":true}},{"date":"332e23","book":{"title":"chjcc","author":"djdjd"},"person":{"name":"vsx","id":8,"age":"43","parent_permission":true}}]
+>>>>>>> 28e9a9b9793c88058995a1d26e772fa6c3db2b3c
