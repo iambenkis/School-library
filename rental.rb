@@ -8,8 +8,11 @@ class Rental
   def initialize(date, book, person)
     @date = date
     @book = book
-    book.rentals << self
+    # book.rentals << self
+    # book.each {
+    #   |n| puts "Books rentals: #{n.date} #{n.book.title} #{n.book.rentals}"
+    # }
     @person = person
-    person.rentals << self
+    # person.rentals << self
   end
 end
