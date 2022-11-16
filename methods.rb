@@ -88,7 +88,7 @@ def create_rentals
   puts 'Rental created successfully'
 end
 
-def is_teacher
+def teacher?
   @people.each_with_index do |person, i|
     puts person
     is_teacher = defined?(person.specialization)
