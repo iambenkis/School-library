@@ -1,7 +1,6 @@
 require_relative '../person'
 require_relative '../student'
 
-
 describe Person do
   context 'when create a new person' do
     it 'return a new object' do
