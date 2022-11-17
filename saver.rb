@@ -14,7 +14,8 @@ def save_people()
     if is_teacher
       people_arr.push({ id: person.id, age: person.age, name: person.name, specialization: person.specialization })
     else
-      people_arr.push({ id: person.id, age: person.age, name: person.name, parent_permission: person.parent_permission })
+      people_arr.push({ id: person.id, age: person.age, name: person.name,
+                        parent_permission: person.parent_permission })
     end
   end
   File.write('./people.json', people_arr.to_json) if @people.any?
@@ -24,7 +25,8 @@ def save_rentals()
   rentals_arr = []
   puts "rentals: #{@rentals}"
   @rentals.each_with_index do |rental, _i|
-    rentals_arr.push({ date: rental.date, book: { title: rental.book.title, author: rental.book.author }, person: { id: rental.person.id, name: rental.person.name } })
+    rentals_arr.push({ date: rental.date, book: { title: rental.book.title, author: rental.book.author },
+                       person: { id: rental.person.id, name: rental.person.name } })
   end
   File.write('./rentals.json', rentals_arr.to_json) if @rentals.any?
 end

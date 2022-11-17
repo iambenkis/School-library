@@ -87,11 +87,3 @@ def create_rentals
   @rentals.push(rental)
   puts 'Rental created successfully'
 end
-
-def teacher?
-  @people.each_with_index do |person, i|
-    puts person
-    is_teacher = defined?(person.specialization)
-    print "#{i}) [#{is_teacher ? 'TEACHER' : 'STUDENT'}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
-  end
-end

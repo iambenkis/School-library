@@ -18,7 +18,13 @@ def load_people
   if File.exist?('./people.json') && !File.read('./people.json').empty?
     JSON.parse(File.read('./people.json')).map do |person|
       is_teacher = person.key?('specialization')
-      is_teacher ? Teacher.new(person['id'], person['age'], person['name'], person['specialization']) : Student.new(person['id'], person['age'], person['name'], person['parent_permission'])
+      if is_teacher
+        Teacher.new(person['id'], person['age'], person['name'],
+                    person['specialization'])
+      else
+        Student.new(person['id'], person['age'], person['name'],
+                    person['parent_permission'])
+      end
     end
   else
     []
