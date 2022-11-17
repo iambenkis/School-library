@@ -31,6 +31,11 @@ To get a local copy up and running follow these simple example steps:
 - Twitter: [/mo_athal](https://twitter.com/mo_athal)
 - LinkedIn: [/moathalkachi](https://linkedin.com/in/moathalkachi)
 
+👤 **Peter Njuguna**
+
+- GitHub: [@githubhandle](https://github.com/peterboro)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/peter-boro-njuguna/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -50,3 +55,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
+
