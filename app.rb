@@ -5,13 +5,15 @@ require_relative 'student'
 require_relative 'classroom'
 require_relative 'person'
 require_relative 'methods'
+require_relative 'loader'
+require './saver'
 
 class App
   def initialize
     @section = 0
-    @people = []
-    @books = []
-    @rentals = []
+    @people = load_people
+    @books = load_books
+    @rentals = load_rentals
   end
 
   puts "Welcome to the school library \t"
@@ -53,6 +55,9 @@ class App
     when 6
       list_rental_by_id
     when 7
+      save_books
+      save_people
+      save_rentals
       puts 'Thank you of using this app!'
     end
   end

@@ -1,3 +1,5 @@
+require 'json'
+
 def list_all_books
   @books.each_with_index do |book, i|
     puts "#{i}) Title: \"#{book.title}\", Author: \"#{book.author}\""
@@ -39,8 +41,9 @@ def create_teacher
   print 'Name: '
   name = gets.chomp
   print 'Specialization: '
+  id = Random.rand(1..1000)
   specialization = gets.chomp
-  @people.push(Teacher.new(age, specialization, name))
+  @people.push(Teacher.new(id, age, name, specialization))
   puts 'Person created successfully'
 end
 
@@ -50,8 +53,9 @@ def create_student
   print 'Name: '
   name = gets.chomp
   print 'Has parent permission? [Y/N] '
+  id = Random.rand(1..1000)
   parent_permission = gets.chomp.downcase == 'y'
-  @people.push(Student.new(age, parent_permission, name))
+  @people.push(Student.new(id, age, name, parent_permission))
   puts 'Person created successfully'
 end
 
