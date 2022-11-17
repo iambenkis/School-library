@@ -23,7 +23,6 @@ end
 
 def save_rentals()
   rentals_arr = []
-  puts "rentals: #{@rentals}"
   @rentals.each_with_index do |rental, _i|
     rentals_arr.push({ date: rental.date, book: { title: rental.book.title, author: rental.book.author },
                        person: { id: rental.person.id, name: rental.person.name } })
