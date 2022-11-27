@@ -6,14 +6,14 @@
 
 ## Built With
 
-- Ruby
+- Ruby 
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
 
-1. Install Ruby in your local environment
-2. Clone this repository
+1. Install Ruby in your local environment.
+2. Clone this repository.
 3. Run the project from the terminal of your IDE
 
 ## Authors
