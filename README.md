@@ -13,15 +13,15 @@ To get a local copy up and running follow these simple example steps:
 
 1. Install Ruby in your local environment.
 2. Clone this repository.
-3. Run the project from the terminal of your IDE
+3. Run the project from the terminal of your IDE.
 
 ## Authors
 
 👤  **Benjamin Kisenge**
 
-* GitHub: [@benjamin kisenge](https://github.com/iambenkis)
-* Twitter: [@benjamin kisenge](https://twitter.com/iambenkis)
-* LinkedIn: [benjamin kisenge](https://www.linkedin.com/in/ben-kisenge/)
+* GitHub: [@benjamin kisenge](https://github.com/iambenkis).
+* Twitter: [@benjamin kisenge](https://twitter.com/iambenkis).
+* LinkedIn: [benjamin kisenge](https://www.linkedin.com/in/ben-kisenge/).
 
 
 👤 **Mo'athal S. Kachi**
