@@ -3,6 +3,10 @@
 # OOP school library
 
 > In this project, I build a school library app. In this initial step, I implement the classes to represent students and teachers.
+
+![uml_class_diagram](https://github.com/iambenkis/School-library/assets/80458199/71c79ec7-a905-4bc3-85cf-cfff5baac83f)
+
+
 ## Built With
 
 - Ruby.
@@ -14,6 +18,12 @@ To get a local copy up and running follow these simple example steps:
 1. Install Ruby in your local environment.
 2. Clone this repository.
 3. Run the project from the terminal of your IDE.
+
+
+## Live video
+
+https://github.com/iambenkis/School-library/assets/80458199/ed49da53-e6cc-49ca-962b-4098fb892c08
+
 
 ## Authors
 
